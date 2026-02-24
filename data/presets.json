@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Максимальная анонимность",
+    "settings": {
+      "camera_index": 0,
+      "owner_face_index": 0,
+      "privacy_mode": "blur_3d",
+      "third_party_mode": "hide_all",
+      "enable_background_blur": true,
+      "enable_background_replace": false,
+      "background_blur_strength": 25,
+      "output_width": 1280,
+      "output_height": 720,
+      "output_fps": 30
+    }
+  },
+  {
+    "name": "Легкий цензор",
+    "settings": {
+      "camera_index": 0,
+      "owner_face_index": 0,
+      "privacy_mode": "square_2d",
+      "third_party_mode": "hide_others",
+      "enable_background_blur": false,
+      "enable_background_replace": false,
+      "background_blur_strength": 25,
+      "output_width": 1280,
+      "output_height": 720,
+      "output_fps": 30
+    }
+  }
+]

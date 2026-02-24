@@ -1,3 +1,16 @@
+Metadata-Version: 2.4
+Name: smart-privacy-cam
+Version: 0.1.0
+Summary: Virtual privacy camera with face masking and background protection
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: opencv-python>=4.9.0
+Requires-Dist: mediapipe>=0.10.14
+Requires-Dist: pyvirtualcam>=0.12.0
+Requires-Dist: customtkinter>=5.2.2
+Requires-Dist: Pillow>=10.3.0
+Requires-Dist: numpy>=1.26.4
+
 # Smart Privacy Cam
 
 Утилита виртуальной камеры для приватности видеозвонков:
@@ -9,12 +22,11 @@
 - имеет UI с превью и пресетами.
 
 ## Стек
-- Python 3.10-3.12
-- MediaPipe Face Mesh + Selfie Segmentation (`mediapipe==0.10.9`)
+- Python 3.10+
+- MediaPipe Face Mesh + Selfie Segmentation
 - OpenCV
 - pyvirtualcam
 - CustomTkinter
-
 
 ## Быстрый старт (Windows)
 
@@ -49,9 +61,3 @@ smart-privacy-cam
 ## MVP-ограничения
 - Владелец кадра выбирается индексом лица (по умолчанию 0).
 - Для работы виртуальной камеры в некоторых системах может потребоваться OBS/драйверы виртуальной камеры.
-
-## Виртуальная камера в Discord/OBS
-- Нажми `Start` в приложении (после этого создается виртуальная камера).
-- В OBS: `Tools -> Virtual Camera` (запусти виртуальную камеру хотя бы один раз).
-- В Discord (или Zoom/Meet): в настройках видео выбери устройство `OBS Virtual Camera` (или `UnityCapture`, если используешь его).
-- Если камера не появляется, закрой и заново открой Discord/OBS после старта приложения.
