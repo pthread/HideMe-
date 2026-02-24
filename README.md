@@ -1,57 +1,34 @@
-# Smart Privacy Cam
+# HideMe!
 
-Утилита виртуальной камеры для приватности видеозвонков:
-- определяет доступные камеры;
-- скрывает лица (2D квадрат или 3D-блюр по Face Mesh + Z-scaling);
-- защищает от "третьих лиц" (скрытие остальных / владельца / всех);
-- размывает или заменяет фон;
-- отправляет обработанный поток в виртуальную камеру (`pyvirtualcam`);
-- имеет UI с превью и пресетами.
+a lightweight virtual camera utility designed for real-time privacy and identity obfuscation during video calls. built to ensure your space and identity remain yours, even when the camera is on.
 
-## Стек
-- Python 3.10-3.12
-- MediaPipe Face Mesh + Selfie Segmentation (`mediapipe==0.10.9`)
-- OpenCV
-- pyvirtualcam
-- CustomTkinter
+---
 
+## key features
 
-## Быстрый старт (Windows)
+* **dynamic face anonymization:** toggle between 2d bounding boxes or sophisticated 3d blur using mediapipe face mesh with z-scaling.
+* **third-party shielding:** intelligent logic to hide background bystanders, the primary user, or all detected subjects.
+* **environment control:** real-time background blurring or total replacement via selfie segmentation.
+* **virtual stream output:** seamless integration with external apps via `pyvirtualcam`.
+* **integrated ui:** full control panel with live preview and customizable presets.
 
-1. Создай и активируй venv:
+---
+
+## tech stack
+
+| component | technology |
+| :--- | :--- |
+| **language** | python 3.10 - 3.12 |
+| **computer vision** | opencv, mediapipe (face mesh & selfie segmentation) |
+| **streaming** | pyvirtualcam |
+| **interface** | customtkinter |
+
+---
+
+## quick start (windows)
+
+### 1. environment setup
 ```powershell
+# create and activate virtual environment
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-```
-
-2. Установи зависимости:
-```powershell
-pip install -r requirements.txt
-```
-
-3. Локальный запуск без установки пакета:
-```powershell
-python run.py
-```
-
-Или запуск как установленного пакета:
-```powershell
-pip install -e .
-smart-privacy-cam
-```
-
-## Структура
-- `src/smart_privacy_cam/core/` — захват, обработка, виртуальный вывод, threading pipeline.
-- `src/smart_privacy_cam/ui/` — интерфейс управления и preview.
-- `src/smart_privacy_cam/config.py` — настройки и пресеты.
-- `data/presets.json` — готовые профили.
-
-## MVP-ограничения
-- Владелец кадра выбирается индексом лица (по умолчанию 0).
-- Для работы виртуальной камеры в некоторых системах может потребоваться OBS/драйверы виртуальной камеры.
-
-## Виртуальная камера в Discord/OBS
-- Нажми `Start` в приложении (после этого создается виртуальная камера).
-- В OBS: `Tools -> Virtual Camera` (запусти виртуальную камеру хотя бы один раз).
-- В Discord (или Zoom/Meet): в настройках видео выбери устройство `OBS Virtual Camera` (или `UnityCapture`, если используешь его).
-- Если камера не появляется, закрой и заново открой Discord/OBS после старта приложения.
